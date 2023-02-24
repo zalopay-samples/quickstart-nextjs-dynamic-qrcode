@@ -1,0 +1,43 @@
+.payment-page {
+    /*margin-top: 80px;*/
+    display: flex;
+    justify-content: center;
+}
+
+#payment-modal {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 500px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+    padding: 40px;
+}
+
+.ant-modal-confirm-body {
+    justify-content: center;
+}
+
+#qr-code {
+    display: flex;
+    justify-content: center;
+}
+
+.ant-typography {
+    text-align: center;
+}
+
+#payment-steps {
+    text-align: left;
+}
+
+#zlp-logo-image {
+    height: 30px;
+    width: 90px;
+    margin-left: 5px;
+}
+
+.checkout-image {
+    display: inline;
+}
+
