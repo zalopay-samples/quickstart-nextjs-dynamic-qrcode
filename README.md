@@ -95,3 +95,7 @@ If the callback setup is worked, the following message is shown:
 💰  Payment Callback received!
 ✅  Update order's status = success where app_trans_id = 230224_353137
 ```
+
+## Credit template
+
+[AlterClass.io](https://github.com/AlterClassIO/ecommerce-nextjs-stripe-checkout)
