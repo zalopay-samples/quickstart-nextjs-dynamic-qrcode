@@ -95,7 +95,7 @@ const cartReducer = (state = {}, action) => {
 // Context + Provider
 const CartContext = React.createContext();
 
-export const CartProvider = ({ currency = 'USD', children = null }) => {
+export const CartProvider = ({ currency = 'VND', children = null }) => {
   const [cart, dispatch] = useLocalStorageReducer(
     'cart',
     cartReducer,

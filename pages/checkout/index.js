@@ -55,7 +55,7 @@ const Checkout = () => {
   return (
       <>
         <Head>
-          <title>My Shopping Cart | AlterClass</title>
+          <title>My Shopping Cart </title>
         </Head>
         <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
           <div className="payment-page">
