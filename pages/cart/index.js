@@ -22,7 +22,7 @@ const Cart = () => {
   return (
       <>
         <Head>
-          <title>My Shopping Cart | AlterClass</title>
+          <title>My Shopping Cart </title>
         </Head>
         <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
           {cartCount > 0 ? (
@@ -125,7 +125,7 @@ const Cart = () => {
                   <button
                       onClick={redirectToCheckout}
                       disabled={redirecting}
-                      className="border rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4"
+                      className="rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4"
                   >
                     {redirecting ? 'Redirecting...' : 'Go to Checkout'}
                   </button>
