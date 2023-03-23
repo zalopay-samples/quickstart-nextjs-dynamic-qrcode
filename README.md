@@ -8,9 +8,9 @@
   - [Troubleshooting](#troubleshooting)
     - [Callback testing](#callback-testing)
     - [Making your server reachable](#making-your-server-reachable)
-    - [Set up a callback](#set-up-a-callback)
-    - [Callback result](#callback-result)
-  - [Credit template](#credit-template)
+    - [Callback setup](#callback-setup)
+  - [Author(s)](#authors)
+  - [Acknowledgement](#acknowledgement)
 
 
 
@@ -63,7 +63,7 @@ To try out payment you need install and register ZaloPay Sanbox , see [Trải ng
 
 This example doesn't include the callback when run at localhost, see how to integration callback in next section
 
-## Troubleshooting 
+## Troubleshooting
 
 ### Callback testing
 
@@ -95,7 +95,7 @@ If you use a tunneling service like [ngrok](ngrok) the webhook URL will be the g
 
 **Note:** when restarting ngrok a new URL is generated, make sure to **update the Webhook URL** in the Merchant Portal
 
-### Set up a callback
+### Callback setup
 
 There are 2 way to set up a callback URL:
 
@@ -103,14 +103,16 @@ There are 2 way to set up a callback URL:
 in order creation API. See more about [Order Information](https://docs.zalopay.vn/en/v2/general/overview.html#order-creation_order-information).
 - Set up in [Sanbox Merchant Portal](https://sbmc.zalopay.vn/home).
 
-### Callback result
 If the callback setup is worked, the following message is shown:
 
-```
+```text
 💰  Payment Callback received!
 ✅  Update order's status = success where app_trans_id = 230224_353137
 ```
+## Author(s)
 
-## Credit template
+- [Phuc Vo](https://github.com/NoRaDoMi)
 
-[AlterClass.io](https://github.com/AlterClassIO/ecommerce-nextjs-stripe-checkout)
+## Acknowledgement
+
+This quick start is built upon [AlterClass.io](https://github.com/AlterClassIO/ecommerce-nextjs-stripe-checkout). 
