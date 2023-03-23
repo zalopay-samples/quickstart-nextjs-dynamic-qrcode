@@ -1,8 +1,22 @@
-# ZaloPay [Dynamic QR payment](https://docs.zalopay.vn/v2/payments/qrcode/overview.html) integration demos
+# Quick Start: Dynamic QR Code
 
-## Details
+- [Quick Start: Dynamic QR Code](#quick-start-dynamic-qr-code)
+  - [Overview](#overview)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Troubleshooting](#troubleshooting)
+    - [Callback testing](#callback-testing)
+    - [Making your server reachable](#making-your-server-reachable)
+    - [Set up a callback](#set-up-a-callback)
+    - [Callback result](#callback-result)
+  - [Credit template](#credit-template)
 
-This repository includes examples of integrations for online payments with ZaloPay. Within this demo app, you'll find a simplified version of an e-commerce website, complete with commented code to highlight key features and concepts of ZaloPay's API.
+
+
+## Overview
+
+This repository includes examples of integrations for online payments with ZaloPay [Dynamic QR Code](https://docs.zalopay.vn/v2/payments/qrcode/overview.html). Within this demo app, you'll find a simplified version of an e-commerce website, complete with commented code to highlight key features and concepts of ZaloPay's API.
 
 ![Card checkout demo](public/images/demo-qrscan.gif)
 
@@ -28,7 +42,7 @@ npm install
 
 1. Update `next.config.js` file with your [Merchant information](https://docs.zalopay.vn/v2/start/):
 
-```
+```sh
 ZLP_MERCHANT_APP_ID="your_app_id_here"
 ZLP_MERCHANT_KEY1="your_key1_here"
 ZLP_MERCHANT_KEY2="your_key2_here"
@@ -37,7 +51,7 @@ ZLP_MERCHANT_ENDPOINT="zalopay_merchant_endpoint_here"
 
 2. Build & Start the server:
 
-```
+```sh
 npm run dev
 ```
 
@@ -49,9 +63,11 @@ To try out payment you need install and register ZaloPay Sanbox , see [Trải ng
 
 This example doesn't include the callback when run at localhost, see how to integration callback in next section
 
-## Testing CallBack from ZaloPay Server
+## Troubleshooting 
 
-Callbacks deliver asynchronous for Merchant Server receives payment's results from ZaloPay Server, only when ZaloPay has received money from user successfully, and it is important to test them during the setup of your integration.
+### Callback testing
+
+Callback (a.k.a Webhook) is a mechanism to deliver Instant Payment Notification asynchronously for Merchant Server receives payment's results from ZaloPay Server, only when ZaloPay has received money from user successfully, and it is important to test them during the setup of your integration.
 You can find more information about callbacks in [here](https://docs.zalopay.vn/en/v2/general/overview.html#callback).
 
 This sample application provides a simple callbacks integration exposed at `/api/callback`. For it to work, you need to:
@@ -61,11 +77,10 @@ This sample application provides a simple callbacks integration exposed at `/api
 
 ### Making your server reachable
 
-Your endpoint that will consume the incoming webhook must be publicly accessible.
+Your endpoint that will consume the incoming callback must be publicly accessible.
 
 There are typically many options, in this example we can expose your localhost with tunneling software (i.e. ngrok)
 
-#### Localhost via tunneling software
 If you use a tunneling service like [ngrok](ngrok) the webhook URL will be the generated URL (ie `https://c991-80-113-16-28.ngrok.io`)
 
 ```bash
