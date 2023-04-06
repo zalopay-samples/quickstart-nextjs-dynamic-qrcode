@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       app_id: configZLP.app_id,
       app_trans_id: appTransID,
       app_user: "user123",
-      app_time: Date.now(), // miliseconds
+      app_time: Date.now(), // milliseconds
       item: JSON.stringify(items),
       embed_data: JSON.stringify(embed_data),
       amount: 50000,
