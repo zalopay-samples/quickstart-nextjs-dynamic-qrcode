@@ -48,6 +48,7 @@ ZLP_MERCHANT_KEY1="your_key1_here"
 ZLP_MERCHANT_KEY2="your_key2_here"
 ZLP_MERCHANT_ENDPOINT="zalopay_merchant_endpoint_here"
 ```
+Or you can use this [testing merchant account](https://docs.zalopay.vn/v2/start/#A-V).
 
 2. Build & Start the server:
 
