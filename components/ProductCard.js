@@ -26,9 +26,6 @@ const ProductCard = (props) => {
   useEffect(() => {
     if (firstRun.current) {
       firstRun.current = false;
-      toast.success(`${props.name} added`, {
-        id: "test",
-      });
       return;
     }
     if (adding) {
@@ -48,8 +45,12 @@ const ProductCard = (props) => {
         <Image
           src={props.image}
           alt={props.name}
-          layout="fill"
-          objectFit="contain"
+          fill
+          sizes="(max-width: 768px) 100vw,
+          (max-width: 1200px) 50vw,
+          33vw"
+          priority
+          style={{ objectFit: "contain" }}
         />
       </div>
       {/* Name + Rating */}

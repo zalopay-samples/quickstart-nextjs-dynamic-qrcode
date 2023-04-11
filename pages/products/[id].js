@@ -27,9 +27,11 @@ const Product = (props) => {
       firstRun.current = false;
       return;
     }
+    if (adding) {
+      setAdding(false);
+      toast.success(`${qty} ${props.name} added`);
+    }
 
-    setAdding(false);
-    toast.success(`${qty} ${props.name} added`);
     setQty(1);
   }, [cartCount]);
 
@@ -52,8 +54,11 @@ const Product = (props) => {
             <Image
               src={props.image}
               alt={props.name}
-              layout="fill"
-              objectFit="contain"
+              fill
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              style={{ objectFit: "contain" }}
             />
           </div>
 
