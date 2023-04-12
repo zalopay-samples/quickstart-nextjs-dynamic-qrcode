@@ -34,7 +34,7 @@ const Checkout = () => {
           .error("Out of time, please try again!")
           .then((r) => router.push("/cart"));
       }
-    }, 1000); // interval check after 1s for test purpose
+    }, 1000); // interval check after 1s, simulate a countdown timer
     return () => {
       clearInterval(timer);
     };
