@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
@@ -16,6 +16,7 @@ const Cart = () => {
   const { cartDetails, totalPrice, cartCount, addItem, removeItem, clearCart } =
     useShoppingCart();
   const [redirecting, setRedirecting] = useState(false);
+  const [itemCount, setItemCount] = useState(0);
   // const navigate = useNavigate();
   const router = useRouter();
 
@@ -24,17 +25,21 @@ const Cart = () => {
     await router.push("/checkout");
   };
 
+  useEffect(() => {
+    setItemCount(cartCount);
+  }, [cartCount]);
+
   return (
     <>
       <Head>
         <title>My Shopping Cart </title>
       </Head>
       <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
-        {cartCount > 0 ? (
+        {itemCount > 0 ? (
           <>
             <h2 className="text-4xl font-semibold">Your shopping cart</h2>
             <p className="mt-1 text-xl">
-              {cartCount} items{" "}
+              {itemCount} items{" "}
               <button
                 onClick={clearCart}
                 className="opacity-50 hover:opacity-100 text-base capitalize"
@@ -57,7 +62,7 @@ const Cart = () => {
           </>
         )}
 
-        {cartCount > 0 ? (
+        {itemCount > 0 ? (
           <div className="mt-12">
             {Object.entries(cartDetails).map(([key, product]) => (
               <div
