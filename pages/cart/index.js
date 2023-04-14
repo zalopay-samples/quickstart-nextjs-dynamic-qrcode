@@ -16,7 +16,7 @@ const Cart = () => {
   const { cartDetails, totalPrice, cartCount, addItem, removeItem, clearCart } =
     useShoppingCart();
   const [redirecting, setRedirecting] = useState(false);
-  const [cartCountState, setCartCountState] = useState(0);
+  const [itemCount, setItemCount] = useState(0);
   // const navigate = useNavigate();
   const router = useRouter();
 
@@ -26,7 +26,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    setCartCountState(cartCount);
+    setItemCount(cartCount);
   }, [cartCount]);
 
   return (
@@ -35,11 +35,11 @@ const Cart = () => {
         <title>My Shopping Cart </title>
       </Head>
       <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
-        {cartCountState > 0 ? (
+        {itemCount > 0 ? (
           <>
             <h2 className="text-4xl font-semibold">Your shopping cart</h2>
             <p className="mt-1 text-xl">
-              {cartCountState} items{" "}
+              {itemCount} items{" "}
               <button
                 onClick={clearCart}
                 className="opacity-50 hover:opacity-100 text-base capitalize"
@@ -62,7 +62,7 @@ const Cart = () => {
           </>
         )}
 
-        {cartCountState > 0 ? (
+        {itemCount > 0 ? (
           <div className="mt-12">
             {Object.entries(cartDetails).map(([key, product]) => (
               <div
